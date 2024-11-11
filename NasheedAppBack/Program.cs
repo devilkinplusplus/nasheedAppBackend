@@ -9,10 +9,12 @@ using NasheedAppBack.Entities.Identity;
 using NasheedAppBack.Repositories.Abstractions.NasheedPlaylists;
 using NasheedAppBack.Repositories.Abstractions.Nasheeds;
 using NasheedAppBack.Repositories.Abstractions.Playlists;
+using NasheedAppBack.Repositories.Abstractions.Sunnahs;
 using NasheedAppBack.Repositories.Base.Abstractions;
 using NasheedAppBack.Repositories.Concrete.NasheedPlaylists;
 using NasheedAppBack.Repositories.Concrete.Nasheeds;
 using NasheedAppBack.Repositories.Concrete.Playlists;
+using NasheedAppBack.Repositories.Concrete.Sunnahs;
 using NasheedAppBack.Services.Abstractions;
 using NasheedAppBack.Services.Concretes;
 using System;
@@ -34,7 +36,7 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IPlaylistService, PlaylistService>();
-
+builder.Services.AddScoped<ISunnahService,SunnahService>();
 
 builder.Services.AddScoped<INasheedReadRepository, NasheedReadRepository>();
 builder.Services.AddScoped<INasheedWriteRepository, NasheedWriteRepository>();
@@ -42,6 +44,8 @@ builder.Services.AddScoped<IPlaylistReadRepository, PlaylistReadRepository>();
 builder.Services.AddScoped<IPlaylistWriteRepository, PlaylistWriteRepository>();
 builder.Services.AddScoped<INasheedPlaylistWriteRepository,NasheedPlaylistWriteRepository>();
 builder.Services.AddScoped<INasheedPlaylistReadRepository,NasheedPlaylistReadRepository>();
+builder.Services.AddScoped<ISunnahReadRepository,SunnahReadRepository>();
+builder.Services.AddScoped<ISunnahWriteRepository,SunnahWriteRepository>();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SqlService")));
 

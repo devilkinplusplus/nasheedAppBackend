@@ -14,6 +14,7 @@ namespace NasheedAppBack
         public DbSet<Nasheed> Nasheeds { get; set; }
         public DbSet<NasheedPlaylist> NasheedPlaylists { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
+        public DbSet<Sunnah> Sunnahs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
